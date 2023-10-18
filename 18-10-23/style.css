@@ -1,0 +1,28 @@
+h1 {
+    border: 2px solid red;
+
+}
+p{
+    background-color: brown;
+}
+.heading2
+{ border: 2px solid rebeccapurple;
+    background-color: aqua ;
+
+}
+.heading2-1
+{
+    border: 2px solid chartreuse;
+}
+#p1 {
+    border: 2px solid burlywood;
+}
+div{
+    border: 2px solid gold;
+    background-color: aqua;
+     
+}
+span{
+    border: 2px solid blueviolet;
+    background-color: aquamarine;
+}
