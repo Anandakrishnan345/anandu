@@ -9,23 +9,80 @@
 <body>
     <h1>signup</h1>
     <form action="abc.js">
-        <label for="textid">first name</label>
-        <input type="text" name="mytext" id="textid" value="enter first name">
-       
+        <div class="right">
+            <br>
+        <label for="textid">first name &nbsp;</label>
+        <input type="text" name="mytext" id="textid" value="enter first name"><br>
+       <br>
         <div>
-        <label for="textid">last name</label>
+        <label for="textid">last name &nbsp;</label>
         <input type="text" name="mytext" id="textid" value="enter second name">
-        </div>
-       
-        <label for="dateid"> date of birth</label>
-        <input type="date" id="dateid">
+        </div><br>
+
         <div>
+            <label for="dateid"> date of birth &nbsp;</label>
+           
+            <select name="date" id="dateid">
+                <option value="date">date</option>
+            </select>
             
+            <select name="month" id="monthid">
+                <option value="month">month</option>
+            </select>
+            <select name="year" id="yearid">
+                <option value="year">year</option>
+
+            </select>
+        </div><br>
+       
+      
+        
+        <div>
+            <label for="">Gender &nbsp;</label>
             <label for="checkboxid">male</label>
             <input type="checkbox" id="checkboxid">
             <label for="checkboxid">female</label>
             <input type="checkbox" id="checkboxid">
+        </div><br>
+
+        <div>
+            <label for="countryid">country &nbsp;</label>
+            <select name="country" id="countryid">
+                <option value="country">country</option>
+            </select>
         </div>
+<br>
+        <div>
+            <label for="textid">Email &nbsp;</label>
+            <input type="text" name="mytext" id="textid" value=" Enter Email">
+        </div>
+        <br>
+        <div>
+            <label for="textid">phone</label>
+            <input type="number" name="mytext" id="textid">
+        </div>
+        <br>
+        <div>
+            <label for="textid">password</label>
+            <input type="text" name="text" id="textid">
+        </div>
+        <br>
+        <div>
+            <label for="textid">confirm password</label>
+            <input type="text" name="text" id="textid">
+        </div>
+        <br>
+        <div>
+            
+            <input type="checkbox" id="agree">
+            <label for="agree">I Agree to the Terms of use</label>
+        </div>
+        <br>
+        <div class="top" style="background-color: orange;">
+            <button type="submit" style="background-color: green;">submit</button>
+            <button type="cancel" style="background-color: red;">cancel</button>
+        </div>
+    </div>
 
 
     </form>
