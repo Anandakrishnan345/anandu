@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.abcd{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+    border-radius: 50%;
+}
