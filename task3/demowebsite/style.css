@@ -155,3 +155,42 @@ nav {
     font-size: 28px;
     color: #0E3051;
 }
+.aslogo2{
+    justify-content: center;
+    margin-top: 50px;
+}
+.collection{
+    text-align: center;
+    color: #0E3051;
+    font-size: 28px;
+    margin-top: 10px;
+}
+.discover p{
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+    margin-top: 10px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    
+}
+.button1, .button2{
+    border: 0;
+    font-size: 14px;
+    margin-top: 30px;
+    background-color: white;
+    color: #0E3051;
+}
+.button1{
+    border-bottom: 2px solid#ff0000;
+    padding-bottom: 5px;
+   
+}
+.button2{
+    margin-left: 20px;
+    padding-bottom: 5px;
+
+}
+
