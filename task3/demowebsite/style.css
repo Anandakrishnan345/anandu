@@ -166,9 +166,10 @@ nav {
     color: #0E3051;
 }
 .aslogo2{
-    justify-content: center;
+   display: flex;
     margin-top: 50px;
     padding-left: 100px;
+    justify-content: center;
 }
 .collection{
     text-align: center;
@@ -330,6 +331,7 @@ nav {
 }
 .line{
     display: flex;
+    justify-content: center;
    
     
 }
@@ -474,6 +476,7 @@ nav {
     border-bottom: 1px solid #ffdf00;
     
 }
+
 .lookbook{
     margin: 50px 100px;
 }
