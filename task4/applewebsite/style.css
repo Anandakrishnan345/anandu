@@ -5,11 +5,39 @@
 }
 nav{
     background-color: black;
+    position: sticky;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 236px;
 }
 .subcontainer{
     display: flex;
     color: white;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    font-weight: 400;
+   justify-content: space-between;
+   
     
+}
+.ribbon{
+    background-color: #1c2739;
+    height: 43.33px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.p1{
+    color: wheat;
+    text-align: center;
+    
+}
+.p2{
+    color: #f39a45;
 }
