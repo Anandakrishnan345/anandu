@@ -2,16 +2,27 @@
     margin: 0;
     padding: 0%;
     box-sizing: border-box;
+ 
 }
+
 nav{
-    background-color: black;
     position: sticky;
+    top: -2px;
+    z-index: 100;
+    background-color: black;
+    
+   
+   
+    
 }
 .container{
+   
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 236px;
+   
+   
 }
 .subcontainer{
     display: flex;
@@ -43,19 +54,110 @@ nav{
     color: #f39a45;
 }
 
-
-.bg-image{
+.pics1,.pics2,.pics3,.pics4,.pics5{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.title{
-    position: absolute;
-    top: 12.5%;
-    width: 100%;
-    font-size: 30px;
-    text-align: center;
-    color: aliceblue;
    
 }
+.odd{
+    font-size: 30px;
+   margin-top: 80px;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid gold; */
+    width: 100%;
+    /* background-color: black; */
+    
+    
+    color: white;
+}
+.odd1{
+    font-size: 30px;
+   margin-top: 80px;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    /* border: 2px solid gold; */
+    width: 100%;
+    /* background-color: white; */
+    
+    
+    color: black;
+}
+.container2{
+    /* border: 2px solid goldenrod; */
+    margin-top: 25px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.odd2{
+    font-size:40px;
+    font-weight: bold;
+}
+.odd3{
+    font-size: 21px;
+}
+.container3{
+    margin: 20px 8px 8px 20px;
+    padding: 0 20px 0 20px;
+}
+.titan{
+    font-size: 58px;
+}
+.titan2{
+    font-size: 28px;
+}
+.container4{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+
+
+}
+
+.subcontainer4{
+    margin: 0 247.6px;
+    font-weight: 400;
+    font-size: 12px;   
+}
+.subcontainer5{
+
+    display: flex;
+    margin: 0 247.6px;
+    font-size: 12px;
+    justify-content: center;
+    justify-content: space-between;
+    border-top: 1px solid grey;
+    
+}
+.subcontainer5 a{
+    text-decoration: none;
+    display: block;
+    color: black;
+    font-weight: 400;
+    margin: 10px 0 9.6px;
+
+}
+.big {
+    margin-top: 10px;
+    font-weight: 700;
+    
+}
+.big div{
+    margin-top: 25px;
+}
+.lower{
+    display: block;
+    font-size: 12px;
+    font-weight:400;
+    margin: 0 247.6px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid grey;
+    
+}
+
