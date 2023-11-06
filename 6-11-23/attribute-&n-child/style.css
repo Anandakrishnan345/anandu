@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+   
+    margin: auto;
+    border: 2px solid red;
+}
+form input{
+    font-size: 25px;
+    margin: 1rem;
+    border-radius: 8px;
+}
+input[type='text']{
+    color: blue;
+    background-color: blue;
+
+}
+input[type='email']{
+    color: blanchedalmond;
+    background-color: blanchedalmond;
+}
+a{
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a[target='_blank']{
+    background-color: aqua;
+}
+
+    
+
