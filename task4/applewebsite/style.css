@@ -60,6 +60,14 @@ nav{
     display: flex;
    
 }
+.pics3 img{
+    /* border: 10px solid red; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 500px;
+    background-color: #FAFAFA;
+    margin-top: 10px;
+}
 .odd{
     font-size: 30px;
    margin-top: 80px;
@@ -87,13 +95,19 @@ nav{
     color: black;
 }
 .container2{
-    /* border: 2px solid goldenrod; */
+    border: 2px solid goldenrod;
+    width: 100%;
     margin-top: 25px;
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
+}
+.pics4,.pics5{
+    /* border: 2px solid green; */
+    width: 100%;
+    padding: 0 5px 0 5px;
 }
 .odd2{
     font-size:40px;
