@@ -59,14 +59,19 @@ nav{
     position: relative;
     display: flex;
    
+   
 }
 .pics3 img{
     /* border: 10px solid red; */
+    display: flex;
     justify-content: center;
+    justify-items: center;
     align-items: center;
-    margin-left: 500px;
+    text-align: center;
+    margin-left: 270px;
     background-color: #FAFAFA;
     margin-top: 10px;
+
 }
 .odd{
     font-size: 30px;
@@ -95,7 +100,7 @@ nav{
     color: black;
 }
 .container2{
-    border: 2px solid goldenrod;
+    /* border: 2px solid goldenrod; */
     width: 100%;
     margin-top: 25px;
     display: flex;
