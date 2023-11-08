@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 70vw;
+    min-height: 60vh;
+    margin: auto;
+    background-color: aquamarine;
+    border: 2px solid orange;
+}
+.box{
+    max-width: 200px;
+    min-height: 200px;
+    margin: 8px;
+    background-color: aqua;
+    box-shadow: 10px 12px green;
+    box-shadow: -10px -12px red;
+
+    box-shadow: -10px -12px 8px red;
+    box-shadow: 10px 12px 8px red;
+    box-shadow: inset 10px 12px 8px red;
+}
+h1{
+    text-shadow: 10px 10px green;
+    text-shadow: 3px 2px 8px green;
+}
