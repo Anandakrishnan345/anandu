@@ -9,7 +9,10 @@ nav{
     position: sticky;
     top: -2px;
     z-index: 100;
-    background-color: #000000a6;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    background-color: #000000b5;
     
     
    
@@ -62,17 +65,18 @@ nav{
    
 }
 .pics3 img{
-    /* border: 10px solid red; */
+ 
     display: flex;
     justify-content: center;
     justify-items: center;
     align-items: center;
     text-align: center;
-    margin: 0 476.25px 0 476.25px;
-    background-color: #FAFAFA;
-    margin-top: 10px;
+    
 
+   
 }
+
+
 .odd{
     font-size: 30px;
    margin-top: 80px;
