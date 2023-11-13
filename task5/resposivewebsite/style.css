@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 nav{
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     justify-content: center;
     
@@ -20,22 +20,26 @@ nav{
     align-items: center;
     justify-content: space-between;
    
-    border: 2px solid goldenrod;
+    /* border: 2px solid goldenrod; */
     
     
 
 }
 .odin{
+    padding: 8px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
 
 
 }
 .subcontainer{
-    border: 2px solid green;
+    margin-left: 250px;
+    /* border: 2px solid green; */
     display: flex;
     max-width: 685.66px;
+    
 }
  .subcontainer ul{
     list-style: none;  
@@ -54,4 +58,40 @@ nav{
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
 
+}
+.menu{
+    display: none;
+}
+.topic{
+    border: 2px solid blue;
+    
+    text-align: center;
+}
+.topic h1{
+    padding: 56px 32px 16px;
+}
+.maxtopic{
+    font-size: 60px;
+}
+.mintopic{
+    font-size: 20px;
+    font-weight: 400;
+}
+@media only screen and (max-width : 1022px){
+    .odin p{
+        
+        display: none;
+    }
+}
+@media only screen and (max-width : 767px)
+{
+    .subcontainer{
+      display: none;
+    }
+    .menu{
+        display: contents;    
+    }  
+    nav{
+        justify-content: space-between;
+    }
 }
