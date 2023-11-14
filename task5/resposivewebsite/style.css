@@ -19,6 +19,7 @@ nav{
     justify-content: center;
     align-items: center;
     justify-content: space-between;
+  
    
     /* border: 2px solid goldenrod; */
     
@@ -26,13 +27,19 @@ nav{
 
 }
 .odin{
+    text-wrap: nowrap;
     padding: 8px 24px;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
+    max-width: fit-content;
 
 
+}
+.odin img{
+    display: flex;
+    
 }
 .subcontainer{
     margin-left: 250px;
@@ -53,6 +60,7 @@ nav{
     margin: 1rem;
 }
 .subcontainer a{
+    text-wrap: nowrap;
     text-decoration: none;
     color: black;
     font-size: 14px;
@@ -63,7 +71,7 @@ nav{
     display: none;
 }
 .topic{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     
     text-align: center;
 }
@@ -120,6 +128,17 @@ nav{
     padding: 0 15px;
     /* border: 2px solid red; */
 }
+.ditto{
+    background-color: aqua;
+    border: 2px solid red;
+    padding: 0 648px;
+}
+
+.maxchapter h2{
+    text-align: center;
+    padding: 0 0 48px;
+    font-size: 30px;
+}
 
 .chapter{
     display: flex;
@@ -127,6 +146,12 @@ nav{
     justify-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+}
+.box{
+    text-align: center;
+    margin: 16px;
+    padding: 24px 40px;
+
 }
 @media only screen and (max-width : 1024px){
     .odin p{
@@ -136,7 +161,7 @@ nav{
         padding-right: 2rem;
     }
 }
-@media only screen and (max-width : 767px)
+@media only screen and (max-width : 768px)
 {
     .subcontainer{
       display: none;
@@ -152,5 +177,13 @@ nav{
         justify-content: center;
        flex-direction: column;
        
+    }   
+}
+@media only screen and (min-width : 427px) and (max-width :1891px){
+    .maxchapter{
+        /* pad: 0 686px; */
+        border: 2px solid greenyellow;
     }
+   
+
 }
