@@ -69,7 +69,7 @@ nav{
 }
 .topic h1{
     padding: 56px 32px 16px;
-}
+} 
 .maxtopic{
     font-size: 60px;
 }
@@ -77,10 +77,63 @@ nav{
     font-size: 20px;
     font-weight: 400;
 }
-@media only screen and (max-width : 1022px){
+#howitworks{
+    padding: 80px 32px;
+  
+    
+}
+.inner{
+    display: flex;
+    justify-content: center;
+   
+}
+#howitworks h2{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+#howitworks p{
+    max-width: 768px;
+    font-size: 18px;
+  /* border: 2px solid red; */
+  padding: 0 55px 0 55px;
+  font-weight: lighter;
+    
+}
+.maxcontainer{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+    font-weight: 100;
+   
+}
+.flexmax{
+    max-width: 341px;
+    padding: 20px;
+    /* border: 2px solid goldenrod; */
+}
+.maxi{
+    margin: 32px 0 16px;
+}
+.maxi1{
+    padding: 0 15px;
+    /* border: 2px solid red; */
+}
+
+.chapter{
+    display: flex;
+   
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+@media only screen and (max-width : 1024px){
     .odin p{
-        
+        width: auto;
         display: none;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }
 @media only screen and (max-width : 767px)
@@ -93,5 +146,11 @@ nav{
     }  
     nav{
         justify-content: space-between;
+    }
+    .maxcontainer{
+        display: flex;
+        justify-content: center;
+       flex-direction: column;
+       
     }
 }
