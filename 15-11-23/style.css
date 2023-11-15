@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100vw;
+    height: 30vh;
+    background-color: goldenrod;
+}
+.box{
+    width: 20vw;
+    height: inherit;
+    background-color: greenyellow;
+    animation-name: animation1;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-fill-mode: backwards;
+    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
+    animation-delay: 3s;
+}
+.container1{
+    width: 60vw;
+    height: 60vh;
+    background-color: purple;
+    margin: auto;
+    position: relative;
+}
+.box1{
+    height: 10vh;
+    width: 10vw;
+    background-color: plum;
+    text-align: center;
+    animation: animation2 5s ease 1s 3 backwards;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container2,.container3{
+    
+    width: 60vw;
+    height: 60vh;
+    background-color: blue;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box2,.box3{
+    height: 20vh;
+    width: 20vw;
+    background-color: plum;
+    color: azure;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 2s;
+    
+}
+.box3{
+
+}
+.box2:hover{
+    background-color: rgb(165, 132, 42);
+}
+
+
+
+@keyframes animation2{
+    0%{
+        top: 0px;
+        left: 0px;
+    }
+    25%{top: 50vh;
+        left: 0px;
+
+    }
+    50%{
+        top: 50vh;
+        left: 50vw;
+    }
+    75%{
+        top: 0px;
+        left: 50vw;
+
+    }
+    100%{
+        top: 0px;
+        left: 0px;
+    }
+}
+
+@keyframes animation1{
+    from{
+        width: 20vw;
+    }
+    to{
+        width: 100vw;
+    }
+}
