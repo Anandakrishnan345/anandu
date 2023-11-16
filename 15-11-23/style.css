@@ -39,8 +39,8 @@
     justify-content: center;
     align-items: center;
 }
-.container2,.container3{
-    
+.container2{
+     margin-top: 1rem;
     width: 60vw;
     height: 60vh;
     background-color: blue;
@@ -49,7 +49,7 @@
     justify-content: center;
     align-items: center;
 }
-.box2,.box3{
+.box2{
     height: 20vh;
     width: 20vw;
     background-color: plum;
@@ -65,7 +65,27 @@
     
 }
 .box3{
-
+    height: 20vh;
+    width: 20vw;
+    background-color: plum;
+    color: azure;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 2s;
+}
+.container3{
+    width: 60vw;
+    height: 60vh;
+    background-color: blue;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .box2:hover{
     background-color: rgb(165, 132, 42);
