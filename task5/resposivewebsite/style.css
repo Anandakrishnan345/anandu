@@ -185,7 +185,7 @@ nav{
 @media only screen and (min-width : 427px) and (max-width :3891px){
     .maxchapter{
         /* pad: 0 686px; */
-        border: 2px solid greenyellow;
+        /* border: 2px solid greenyellow; */
         display: flex;
         justify-content: center;
     }
@@ -197,8 +197,8 @@ nav{
         grid-template-columns: auto auto auto;
         grid-template-rows: 308px 308px 308px;
         background-color: #f3f4f6;
-        border:2px solid red;
+        /* border:2px solid red; */
        
             
     }
-    
+}
