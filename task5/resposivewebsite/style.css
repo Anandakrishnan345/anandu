@@ -128,29 +128,32 @@ nav{
     padding: 0 15px;
     /* border: 2px solid red; */
 }
-.ditto{
-    background-color: aqua;
-    border: 2px solid red;
-    padding: 0 648px;
-}
 
-.maxchapter h2{
+
+.title{
+    font-size: 25px;
     text-align: center;
-    padding: 0 0 48px;
-    font-size: 30px;
 }
-
+.maxchapter{
+    background-color: #f3f4f6;
+}
 .chapter{
     display: flex;
    
     justify-content: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: #f3f4f6;
+    
 }
+
 .box{
     text-align: center;
     margin: 16px;
     padding: 24px 40px;
+    background-color: white;
+    color: black;
+    
 
 }
 @media only screen and (max-width : 1024px){
@@ -179,11 +182,23 @@ nav{
        
     }   
 }
-@media only screen and (min-width : 427px) and (max-width :1891px){
+@media only screen and (min-width : 427px) and (max-width :3891px){
     .maxchapter{
         /* pad: 0 686px; */
         border: 2px solid greenyellow;
+        display: flex;
+        justify-content: center;
     }
    
-
-}
+    .chapter{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 308px 308px 308px;
+        background-color: #f3f4f6;
+        border:2px solid red;
+       
+            
+    }
+    
