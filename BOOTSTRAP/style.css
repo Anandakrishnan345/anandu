@@ -14,7 +14,8 @@
     
 }
 .appolo video{
-    max-width: 500px;
+    max-width: 100%;
+    
 }
 .pluto{
     background-color: #F5EDE5;
@@ -22,4 +23,12 @@
 .pablo{
     max-width: 480px;
     
+}
+.tokiyo{
+    color: #541544;
+    font-weight: bold;
+}
+.tokiyo p{
+    max-width: 190px;
+    font-size: 10px;
 }
