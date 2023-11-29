@@ -1,5 +1,17 @@
 
 .tango img{
-    max-width:25%;
+    max-width: 100%;
    
+    
+}
+   
+.rat{
+    max-width: 140px;
+}
+@media only screen and (min-width : 601px){
+    .choco{
+        
+        width: 250px;
+        
+    }
 }
