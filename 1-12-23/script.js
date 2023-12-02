@@ -100,12 +100,92 @@ do{
                 sum1=sum1+i;
                 
             }
-            if(i%2==1){
-                sum2=sum2+i;
+            // if(i%2==1){
+                else{sum2=sum2+i;}
                 
-            }
+                
+            // }
 
         }
-        console.log(sum1);
-        console.log(sum2);
+        console.log("evensum",sum1);
+        console.log("oddsum",sum2);
     }
+
+
+
+    //array sum 2-12-23
+    {
+     let arr =[50,30,10,40,20];
+     let sum=0;
+     for(let i=0;i<arr.length;i++)
+     {
+        sum=sum+arr[i];
+     }   
+     console.log("arraysum: ",sum);
+     
+
+     //average 
+     let avg=sum/arr.length;
+     console.log("avg: ",avg);
+
+
+     //find min value of array
+
+     let min = arr[0];
+     for(i=0;i<arr.length;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+     }
+
+     console.log("min: ",min)
+
+     // find max value of array
+
+
+     let max = arr[0];
+     for(i=0;i<arr.length;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+     }
+
+     console.log("max: ",max)
+
+
+    
+    }
+{
+ // find -ve number in an array and convert it into +ve 
+ let arr=[5,6,-4,2,8,9]
+ let neg=0;
+ for(let i=0;i<arr.length;i++){
+    if(arr[i]<neg){
+        arr[i]=arr[i]*-1;
+    }
+ }
+ console.log("arr :",arr)
+
+ //strig reverse
+
+let str="Hello";
+let reverse = '';
+
+for (let i=str.length-1;i>=0;i--){
+    reverse=reverse+str[i];
+
+}
+    console.log("reverse",reverse);
+}
+{
+// find lowercase letter in array and convert to upper case
+let arrletter=['a','B','c','D']
+let upcarr=[];
+let locarr=[];
+ for (let i=0;i<arrletter.length;i++){
+    upcarr[i]=arrletter[i].toUpperCase();
+    locarr[i]=arrletter[i].toLowerCase();
+ }
+ console.log("uppercase",upcarr)
+ console.log("lowercase",locarr)
+}
