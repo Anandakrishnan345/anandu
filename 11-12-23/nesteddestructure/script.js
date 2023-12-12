@@ -1,4 +1,5 @@
 {
+    //destructuring
     let matrix=[
         [1,2,3],
         [4,5,6],
@@ -86,4 +87,75 @@
     return Element.place =="chennai"        
     })
     console.log("filterres",filterresult);
+
+    // 4- map
+    let mapresult = arr.map((Element)=>{
+        return Element.name;
+    })
+    console.log("mapresult is:",mapresult)
+
+    // 5-  reduce
+    let totalmark = arr.reduce((total,Element)=>{
+        return total + Element.mark
+    },0);
+    console.log("totalmark:",totalmark)
+}
+
+{
+    //find sum of squares of a numerical array using foreach
+    let arr=[2,3,4,6];  
+   let square = arr.map((n)=>{
+        return n**2
+    })
+    console.log("square",square)
+    let sum=0;
+    let sumsquare = square.forEach((Element) =>{sum+=Element});
+    console.log("sumsquare",sum)
+
+}
+
+{
+    //find first even number of an array using find
+    let arr = [5,7,2,1,4];
+    let firsteven = arr.find((Element) =>{
+        return Element %2 == 0;
+
+    })
+    console.log("firsteven",firsteven)
+}
+{
+    //filter all  even nums
+    let arr = [5,7,2,1,4];
+    let filtereven = arr.filter((Element) =>{
+        return Element %2 == 0;
+
+    })
+    console.log("filtereven",filtereven)
+}
+{
+    //double eachelement using map
+    let arr=[2,3,4,6];  
+    let double = arr.map((n)=>{
+         return n*2
+     })
+     console.log("no double",arr)
+     console.log("double",double)
+}
+
+
+{
+ let arr = [-4,-5,5,6,2,-8]
+ function productpossitive(arr){
+    let positivefilter = arr.filter((Element) =>{
+        return Element > 0;
+    })
+    console.log("pos",positivefilter)
+    // let product = 0;
+    let positiveproduct = positivefilter.reduce((product,n) =>{
+       product= product*n;
+       return product;
+    },1);
+    console.log("productpositive",positiveproduct)
+ }
+ productpossitive(arr)
 }
