@@ -159,3 +159,104 @@
  }
  productpossitive(arr)
 }
+
+{
+    let person = {
+        firstname: "john",
+        lastname:"doe",
+        age:30,
+        getage:function (){
+            console.log(`Age of ${this.firstname} is ${this.age}`)
+        }
+    }
+    person.getage();
+    console.log("this :",this);
+
+    function greet(message1,message2){
+        console.log(`${message1} and ${message2} ${this.firstname}`)
+    }
+    // greet("hello")
+    greet.call(person,"hello","hai");
+    greet.apply(person,["hello","hai"])
+    let bindedresult =greet.bind(person,"hello","hai");
+    console.log(bindedresult());
+}
+
+{
+//constructor function
+function person(name,age,mark){
+    this.name=name;
+    this.age=age;
+    this.mark=mark;
+    this.greeting = function (){
+        console.log(`Hai ${this.name}, your mark is ${this.mark}`)
+    }
+}
+let person1 = new person("Hari",17,60);
+console.log("person1",person1)
+person1.greeting()
+
+let person2 = new person("leo",17,60);
+console.log("person1",person2)
+person2.greeting()
+
+person.prototype.getageandmark = function(){
+    console.log(`Hello ${this.name},your age is ${this.age} and your mark is ${this.mark}`)
+}
+person1.getageandmark()
+}
+
+{
+//classes
+class person {
+    name;
+    age;
+    mark;
+
+    constructor(name,age,mark){
+        this.name = name;
+        this.age = age;
+        this.mark = mark;
+    }
+    greeting(){
+        console.log(`hai ${this.name}`)
+    }
+}
+ let person1 = new person("teja",17,89);
+ console.log("person1",person1);
+ person1.greeting()
+
+ let person2 = new person("Romeo",17,79);
+ console.log("person1",person2);
+ person2.greeting()
+
+ person.prototype.getageandmark = function(){
+    console.log(`Hello ${this.name},your age is ${this.age} and your mark is ${this.mark}`)
+}
+
+person1.getageandmark()
+person2.getageandmark()
+
+}
+
+{
+    //inheritance
+
+    class Animal{
+        name;
+        constructor(name){
+            this.name=name;
+        }
+        printname(){
+            console.log(`Animal is ${this.name}`);
+        }
+
+    }
+    let myAnimal = new Animal("monkey");
+    console.log("myAnimal is :",myAnimal)
+    myAnimal.printname();
+
+    // let myAnimal1 = new Animal("donkey");
+    // console.log("myAnimal is :",myAnimal)
+    // myAnimal1.printname();
+}
