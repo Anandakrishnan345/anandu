@@ -259,4 +259,50 @@ person2.getageandmark()
     // let myAnimal1 = new Animal("donkey");
     // console.log("myAnimal is :",myAnimal)
     // myAnimal1.printname();
+
+    class dog extends Animal{
+        color;
+        constructor(name,color){
+            super(name);//calls parent constructor
+            this.color = color;
+        }
+        printcolor(){
+            console.log(`color 0f ${this.name} is ${this.color}`)
+        }
+    }
+    let mydog = new dog("panda","black");
+    console.log("mydog",mydog);
+    mydog.printname();
+    mydog.printcolor();
+}
+
+{
+    class vehicle{
+        name;
+        constructor(name){
+            this.name=name;
+        }
+        printname(){
+            console.log(`vehicle is ${this.name}`);
+        }
+
+    }
+    let myvehicle = new vehicle("car");
+    console.log("myvehicle is :",myvehicle)
+    myvehicle.printname();
+
+    class car extends vehicle{
+        color;
+        constructor(name,color){
+            super(name);//calls parent constructor
+            this.color = color;
+        }
+        printcolor(){
+            console.log(`color 0f ${this.name} is ${this.color}`)
+        }
+    }
+    let mycar = new car("Mercedes","black");
+    console.log("mycar is",mycar);
+    mycar.printname();
+    mycar.printcolor();
 }
