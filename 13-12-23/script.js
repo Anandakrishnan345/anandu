@@ -37,14 +37,64 @@
     });
 
   
-}
-{
-    class yellowbutton extends myButton{
+
+    class YellowButton extends myButton{
         onclick(fn){
             this.button.onclick = function (){
                 fn();
                 this.button.style.background = "yellow";
             }.bind(this);
+        }
+    }
+    let myYellowButton = new YellowButton("yellow button");
+    myYellowButton.width = 200;
+    myYellowButton.height = 200;
+    console.log("myyellowbutton width",myYellowButton.width);
+    console.log("myyellowbutton height",myYellowButton.height);
+
+    myYellowButton.onclick(function (){
+        console.log("button clicked....");
+    });
+}
+
+{
+    //javascript is a synchronous single threaded  language
+    console.log("first line")
+    console.log("second line")
+    setTimeout(()=>{
+        console.log("from setTimeout");
+    },5000);//callback queue with 5000ms delay
+    console.log("third line")
+
+    let datas = fetch(``); //microtask queue(has more priority)
+    console.log("datas",datas)
+
+    //web space environment
+    //javascript engine - call back queue and microtask queue
+    //event loop
+    //call stack
+}
+
+{
+    let xhr = new XMLHttpRequest();
+    xhr.open("get",'https://jsonplaceholder.typicode.com/users');
+    xhr.send();
+
+    console.log("xhr :",xhr);
+
+    xhr.onreadystatechange = function (){
+        console.log("ready sate :",xhr.readyState);
+        console.log("statusCode :",xhr.status);
+        
+        if(xhr.readyState==4){
+            let response = xhr.response;
+            console.log("response :",response);
+            console.log("type of response :",typeof(response));
+
+            let parsed_response = JSON.parse(response);
+            console.log("parsed_response:",parsed_response);
+            console.log("typeof parsed_response",typeof(parsed_response));
+
         }
     }
 }
