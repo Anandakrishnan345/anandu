@@ -13,6 +13,7 @@
         console.log("statusCode :",xhr.status);
         let content = document.getElementById('content')
         
+        
         if(xhr.readyState==4){
             if(xhr.status==200){
 
@@ -26,18 +27,22 @@
             console.log("typeof parsed_response",typeof(parsed_response));
 
             datas = '';
+            
             for(let i = 0;i<parsed_response.length;i++){
                 datas = datas+`
                 <tr>
                 <td>${parsed_response[i].id}</td>
                 <td>${parsed_response[i].title}</td>
                 <td>${parsed_response[i].price}</td>
-                <td>${parsed_response[i].discription}</td>
+                <td>${parsed_response[i].description}</td>
+                <td><img src="${parsed_response[i].image}" alt=""> </td>
+                
                 </tr>
                 `
-
+               
 
             }
+            
             content.innerHTML=datas;
 
 
