@@ -3,8 +3,16 @@
 
     let btn = document.getElementById('btn');
     btn.addEventListener('click',()=>{
-        xhr.send();
+        
+        
+        function show() {
+            document.getElementById('dip').style.visibility = 'visible';
+         }
+         show();
+         xhr.send();
     });
+   
+
     xhr.open("get",'https://fakestoreapi.com/products'); 
     // xhr.send();
     console.log("xhr :",xhr);
