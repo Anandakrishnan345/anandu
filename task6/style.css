@@ -1,5 +1,5 @@
 
-.tango img{
+.tango img {
     max-width: 100%;
    
     
@@ -8,10 +8,46 @@
 .rat{
     max-width: 140px;
 }
+.candy{
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    
+}
+.starsimg{
+    max-width: 100%;
+}
+.candy::-webkit-scrollbar{
+    display: none;
+}
+.bg-purple{
+    background-color: rgb(147, 116, 182);
+    color: azure;
+    max-width:fit-content;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.bg-orange{
+    background-color: rgb(226, 146, 38);
+}
+.bg-navy{
+    background-color: rgb(2, 19, 91);
+}
+.description{
+    font-size: 24px;
+    text-wrap: nowrap;
+}
+
 @media only screen and (min-width : 601px){
     .choco{
         
         width: 250px;
         
     }
+  
 }
