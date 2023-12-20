@@ -65,9 +65,119 @@
 
     
 
+    const str5="hello"
+    const regexp12 = /[abc]/i;  //checks abc is present in str5
+    const result12 = regexp12.test(str5);
+    console.log("result12",result12); // false
+
+   
+    const regexp13 = /[^abc]/i;  //if there is no abc present in str5 then it will be true
+    const result13 = regexp13.test(str5);
+    console.log("result13",result13); // true
+
+
+    const regexp14 = /[h+]/i //checks atleast one h is present in str5
+    const result14 = regexp14.test(str5);
+    console.log("result14",result14); // true
+
+    const regexp15 = /o$/i;
+    const result15 = regexp15.test(str5);
+    console.log("result15",result15); // false
+    
+
+
+    const regexp16 = /o?$/i;
+    const result16 = regexp16.test(str5);
+    console.log("result14",result16); // true
 
 
 
+    const regexp17 = /o+$/i;
+    const result17 = regexp17.test(str5);
+    console.log("result17",result17); // false
 
 
+
+    // {} indicates the number of  charecters
+
+    const regexp18 = /l{2}o$/i // o should be exactly after 2 l's
+    const result18 = regexp18.test(str5);
+    console.log("result18",result18);//true
+
+    const regexp19 = /l{2,4}o$/i; //o should be exactly after between 2 to 4 l's
+    const result19 = regexp19.test(str5)
+    console.log("result19",result19);//true
+    
+    const regexp20 = /hel{2,}o$/i // 2 or more l is required
+    const result20 = regexp20.test(str5)
+    console.log("result20",result20);//true
+
+    // \ indicates escape charecter used for matching any characters which has a special meaning
+
+    const regexp21 = /\d/i;// if there is any digits it will be true
+    const result21 = regexp21.test(str5);
+    console.log("result21",result21);//false
+
+
+    const regexp22 = /\D/i //if there is any on digit it will be true, if there is only digit it will be false 
+    const result22 = regexp22.test(str5);
+    console.log("result22",result22); true
+
+    //suppose we want to match '.'in a string since it has special meaning in regullar expression it will not work
+
+}
+
+{
+    const regexpForDate = /^\d{1,2}-\d{1,2}-\d{4}$/i
+    function checkResult(value){
+        const result = regexpForDate.test(value);
+        if(result){
+            return '';
+
+        }else{
+            return'inavalid string';
+
+        }
+    }
+    const value = "16-12-2023";
+    let validaton_result = checkResult(value);
+    console.log("validation_result : ",validaton_result);
+    function onChange(arg){
+        let validation_result = checkResult(arg.value);
+        let label = document.getElementById('error');
+        if (validation_result){
+            label.innerHTML = validation_result;
+
+        }else{
+            label.innerHTML = validation_result
+        }
+    }
+}
+
+{
+    const regexpForDate = /^([012]?\d|3[01])-([0]\d|[1][012])-(\d{4})$/i;
+    
+    function checkResult(value){
+        const result = regexpForDate.test(value);
+        if(result){
+            return '';
+
+        }else{
+            return'inavalid string';
+
+        }
+    }
+    const value = "16-12-2023";
+    let validaton_result = checkResult(value);
+    console.log("validation_result : ",validaton_result);
+    function onChange(arg){
+        let validation_result = checkResult(arg.value);
+        let label = document.getElementById('error');
+        if (validation_result){
+            label.innerHTML = validation_result;
+
+        }else{
+            label.innerHTML = validation_result
+        }
+    }
 }
