@@ -16,7 +16,7 @@ const http = require('http');
 const url = require('url');
 const port = 3000;
 const fs = require('fs');
-const queryString = require('queryString')
+// const queryString = require('queryString');
 
  const server = http.createServer((req,res)=>{
   console.log("url :",req.url);
