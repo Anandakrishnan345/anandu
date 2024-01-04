@@ -43,10 +43,20 @@ const http = require('http');
 const url = require('url');
 const port = 3000;
 const fs = require('fs');
-const queryString = require('queryString');
+const queryString = require('querystring');
 const { MongoClient } = require('mongodb');
 
+const client = new MongoClient("mongodb://127.0.0.1:27017");
+
+
+
+
  const server = http.createServer((req,res)=>{
+
+  //access database and collection
+  const db = client.db("users");
+  const collection = db.collection("users_coll");
+
   console.log("url :",req.url);
   const parsed_url = url.parse(req.url);
   console.log("parsed url:",parsed_url);
@@ -54,7 +64,7 @@ const { MongoClient } = require('mongodb');
   if(parsed_url.pathname ==='/'){
     res.writeHead(200,{'content-type':'text/html'});
     res.end(fs.readFileSync('../client/index.html'));
-  }else if(parsed_url.pathname === '/style.css'){
+  }else if(parsed_url.pathname === '/client/style.css'){
     res.writeHead(200,{"content-Type":"text/css"});
     res.end(fs.readFileSync("../client/style.css"));
   }
@@ -64,14 +74,18 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
   let body ='';
 
   //collect data as it comes in chunks
-  req.on('data',(chunck)=>{
-    console.log("chunk tostring() :",chunck.tostring());
-    body+=chunck.tostring();
+  req.on('data',(chunk)=>{
+    console.log("chunk:",chunk)
+    console.log("chunk tostring() :",chunk.toString());
+    body+=chunk.toString();
     console.log("body :",body);
   })
   //process the formdata on end of the req
 
   req.on('end',async () =>{
+    try {
+      
+   
     const formData = queryString.parse(body);
     console.log("formData :",formData);
     
@@ -80,11 +94,9 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     console.log("name :",formData.name);
     console.log("email :",formData.email);
     console.log("password",formData.password);
-    
-  })
 
-  //save to a database
-  Collection.insertOne(formData)
+      //save to a database
+  await collection.insertOne(formData)
   .then((message) =>{
     console.log("document save successfully");
     console.log("message",message);
@@ -93,6 +105,18 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     console.log("Document not inserted");
     console.log("database insertion error :",error);
   })
+
+  } catch (error) {
+    console.log("error")
+      
+  }
+  res.writeHead(200,{'content-type' : 'text/plain'});
+  res.end("form submitted.....")
+    
+  })
+
+
+
 
 }
  });
