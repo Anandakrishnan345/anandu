@@ -54,7 +54,7 @@ const client = new MongoClient("mongodb://127.0.0.1:27017");
  const server = http.createServer((req,res)=>{
 
   //access database and collection
-  const db = client.db("users");
+  const db = client.db("Newusers");
   const collection = db.collection("users_coll");
 
   console.log("url :",req.url);
@@ -67,7 +67,13 @@ const client = new MongoClient("mongodb://127.0.0.1:27017");
   }else if(parsed_url.pathname === '/client/style.css'){
     res.writeHead(200,{"content-Type":"text/css"});
     res.end(fs.readFileSync("../client/style.css"));
-  }
+
+    
+  }else if(parsed_url.pathname ==='/client/add_user.html'){
+    res.writeHead(200,{'content-type':'text/html'});
+    res.end(fs.readFileSync('../client/add_user.html')); 
+
+
 if(req.method === "POST" && parsed_url.pathname === "/submit"){
   console.log("form submitted ...");
  

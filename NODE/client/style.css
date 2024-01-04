@@ -75,3 +75,11 @@ input[type=submit]{
 
 
 }
+.getuser_container{
+    background-color: cadetblue;
+}
+.get_user{
+    display: flex;
+    justify-content: center;
+    
+}
