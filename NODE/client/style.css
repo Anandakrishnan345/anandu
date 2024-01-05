@@ -81,5 +81,27 @@ input[type=submit]{
 .get_user{
     display: flex;
     justify-content: center;
+    gap: 50px;
     
+    
+}
+.index_btn {
+    color: rgb(1, 41, 7);
+    border-radius: 8px;
+    padding: 10px;
+    
+}
+.inner_ctn{
+    text-decoration: none;
+    color: rgb(1, 41, 7);
+}
+
+.table,th,td{
+   
+    border: 5px solid rgba(14, 13, 14, 0.26);
+
+}
+.main_ctn{
+    margin: auto;
+ background-color: aqua;
 }

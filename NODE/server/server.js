@@ -51,7 +51,7 @@ const client = new MongoClient("mongodb://127.0.0.1:27017");
 
 
 
- const server = http.createServer((req,res)=>{
+ const server = http.createServer(async(req,res)=>{
 
   //access database and collection
   const db = client.db("Newusers");
@@ -72,6 +72,13 @@ const client = new MongoClient("mongodb://127.0.0.1:27017");
   }else if(parsed_url.pathname ==='/client/add_user.html'){
     res.writeHead(200,{'content-type':'text/html'});
     res.end(fs.readFileSync('../client/add_user.html')); 
+  }else if(parsed_url.pathname ==='/client/get_user.html'){
+    res.writeHead(200,{'content-type':'text/html'});
+    res.end(fs.readFileSync('../client/get_user.html')); 
+  }else if(parsed_url.pathname ==='/script.js'){
+    res.writeHead(200,{'content-type':'text/javascript'});
+    res.end(fs.readFileSync('../client/script.js')); 
+  }   
 
 
 if(req.method === "POST" && parsed_url.pathname === "/submit"){
@@ -120,11 +127,20 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
   res.end("form submitted.....")
     
   })
-
-
-
-
 }
+
+    //handle get request to get user details
+    if(req.method === "GET" && parsed_url.pathname === "/getData"){
+      let data = await collection.find().toArray();
+      console.log("data :",data);
+
+      let json_data = JSON.stringify(data);
+      console.log("json_data :",json_data);
+
+      res.writeHead(200,{"content-type" : "text/json"});
+      res.end(json_data);
+    }
+
  });
 
  async function connect(){
