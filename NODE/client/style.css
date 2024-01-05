@@ -77,6 +77,7 @@ input[type=submit]{
 }
 .getuser_container{
     background-color: cadetblue;
+    
 }
 .get_user{
     display: flex;
@@ -89,6 +90,7 @@ input[type=submit]{
     color: rgb(1, 41, 7);
     border-radius: 8px;
     padding: 10px;
+    margin: 5px 0 5px;
     
 }
 .inner_ctn{

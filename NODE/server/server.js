@@ -75,7 +75,7 @@ const client = new MongoClient("mongodb://127.0.0.1:27017");
   }else if(parsed_url.pathname ==='/client/get_user.html'){
     res.writeHead(200,{'content-type':'text/html'});
     res.end(fs.readFileSync('../client/get_user.html')); 
-  }else if(parsed_url.pathname ==='/script.js'){
+  }else if(parsed_url.pathname ==='/client/script.js'){
     res.writeHead(200,{'content-type':'text/javascript'});
     res.end(fs.readFileSync('../client/script.js')); 
   }   
@@ -96,7 +96,7 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
   //process the formdata on end of the req
 
   req.on('end',async () =>{
-    try {
+    // try {
       
    
     const formData = queryString.parse(body);
@@ -109,7 +109,8 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     console.log("password",formData.password);
 
       //save to a database
-  await collection.insertOne(formData)
+  // await 
+  collection.insertOne(formData)
   .then((message) =>{
     console.log("document save successfully");
     console.log("message",message);
@@ -119,14 +120,14 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     console.log("database insertion error :",error);
   })
 
-  } catch (error) {
-    console.log("error")
+  // } catch (error) {
+  //   console.log("error")
       
-  }
+  // }
   res.writeHead(200,{'content-type' : 'text/plain'});
   res.end("form submitted.....")
     
-  })
+  });
 }
 
     //handle get request to get user details
