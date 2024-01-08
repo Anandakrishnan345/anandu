@@ -16,8 +16,9 @@ async function getuserData() {
             <td>${parsedUserData[i]._id}</td>
             <td><input type="name" name="name" id="name-${parsedUserData[i]._id}" value=${parsedUserData[i].name} disabled="true"></td> 
             <td><input type="email" name="email" id="email-${parsedUserData[i]._id}" value=${parsedUserData[i].email} disabled="true"></td>
-            <td><input type="password" name="password" id="name-${parsedUserData[i]._id}" value=${parsedUserData[i].password} disabled="true"></td>
+            <td><input type="password" name="password" id="password-${parsedUserData[i]._id}" value=${parsedUserData[i].password} disabled="true"></td>
             <td><button onclick="handleEdit('${parsedUserData[i]._id}')">Edit</button></td>
+            <td><button onclick='handleSave('${parsedUserData[i]._id}')">Save</button></td>
             </tr>
         `
      }
@@ -35,4 +36,37 @@ function handleEdit(id){
     let email = document.getElementById(`email-${_id}`);
     console.log("email :",email);
     email.disabled=false;
+
+    let password = document.getElementById(`password-${_id}`);
+    console.log("password :",password);
+    password.disabled=false;
+}
+
+async function handleSave(id){
+    console.log("id :",id);
+    let name = document.getElementById(`name-${id}`).value;
+    console.log("name :",name);
+
+    let email = document.getElementById(`email-${id}`).value;
+    console.log("email :",email);
+
+    let password = document.getElementById(`password-${id}`).value;
+    console.log("password :",password);
+
+    let data = {
+        id,
+        name,
+        email,
+        password,
+    }
+    let json_data = JSON.stringify(data);
+
+    await fetch('http://localhost:3000/editData',{
+        "method" : "PUT",
+        "headers" : {
+            "content-Type" : "text/json"
+        },
+        "body":json_data,
+    })
+
 }
