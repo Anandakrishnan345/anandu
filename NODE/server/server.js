@@ -44,7 +44,7 @@ const url = require('url');
 const port = 3000;
 const fs = require('fs');
 const queryString = require('querystring');
-const { MongoClient } = require('mongodb');
+const { MongoClient, ObjectId } = require('mongodb');
 
 const client = new MongoClient("mongodb://127.0.0.1:27017");
 
@@ -140,6 +140,42 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
 
       res.writeHead(200,{"content-type" : "text/json"});
       res.end(json_data);
+    }
+    if(req.method === "PUT" && parsed_url.pathname === "/editData"){
+      let body ="";
+      req.on('data',(chunks)=>{
+        console.log("chunks :",chunks);
+        body = body + chunks.tostring();
+        console.log("body ;",body);
+        
+      });
+      req.on('end',async ()=>{
+        console.log("body :",body);
+        let data=JSON.parse(body);
+        let id=data.id;
+        console.log("id :",id);
+        console.log("typeof(id) :",typeof(id));
+        let _id=new ObjectId(id);
+        console.log("_id :",_id);
+        console.log("typeof(_id) :",typeof(_id));
+        let updateDatas ={
+          name :data.name,
+          email : data.email,
+          password : data.password,
+
+        }
+        await collection.updateOne({_id},{$set : updateDatas})
+        .then((message)=>{
+          console.log("Document updated...:",message);
+          res.writeHead(200,{"content-type" : "text/plain"});
+          res.end("updated successfully");
+        })
+        .catch((error)=>{
+          console.log("Document not updated :",error);
+          res.writeHead(400,{"content-type" : "text/plain"});
+          res.end("updation failed");
+        })
+      })
     }
 
  });
