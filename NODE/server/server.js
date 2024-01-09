@@ -138,14 +138,14 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
       let json_data = JSON.stringify(data);
       console.log("json_data :",json_data);
 
-      res.writeHead(200,{"content-type" : "text/json"});
+      res.writeHead(200,{"Content-Type" : "text/json"});
       res.end(json_data);
     }
     if(req.method === "PUT" && parsed_url.pathname === "/editData"){
       let body ="";
       req.on('data',(chunks)=>{
         console.log("chunks :",chunks);
-        body = body + chunks.tostring();
+        body = body + chunks.toString();
         console.log("body ;",body);
         
       });
@@ -167,16 +167,42 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
         await collection.updateOne({_id},{$set : updateDatas})
         .then((message)=>{
           console.log("Document updated...:",message);
-          res.writeHead(200,{"content-type" : "text/plain"});
+          res.writeHead(200,{"Content-Type" : "text/plain"});
           res.end("updated successfully");
         })
         .catch((error)=>{
           console.log("Document not updated :",error);
-          res.writeHead(400,{"content-type" : "text/plain"});
+          res.writeHead(400,{"Content-Type" : "text/plain"});
           res.end("updation failed");
         })
       })
     }
+
+     if(req.method === "DELETE" && parsed_url.pathname === "/deleteData"){
+      console.log("Reached delete route");
+
+      let body ="";
+      req.on('data',(chunks)=>{
+        console.log("Chunks",chunks);
+        body = body + chunks.toString();
+        console.log("body :",body);
+
+      });
+      req.on('end',async ()=>{
+        let _id= new ObjectId(body);
+        await collection.deleteOne({_id})
+        .then((message) =>{
+          console.log("Deletion Successful");
+          res.writeHead(200,{"Content-Type" : "text/plain"});
+          res.end("success");
+        })
+        .catch((error) =>{
+          console.log("deletion failed");
+          res.writeHead(200,{"Content-Type" : "text/plain"});
+          res.end("failed")
+        })
+      })
+     }
 
  });
 
