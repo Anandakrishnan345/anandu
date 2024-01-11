@@ -21,7 +21,13 @@ const server = http.createServer(async(req,res) =>{
     }else if(parsed_url.pathname === '/client/style.css'){
       res.writeHead(200,{"content-Type":"text/css"});
       res.end(fs.readFileSync("../client/style.css"));  
-    }
+    }else if(parsed_url.pathname ==='/client/get_todo.html'){
+      res.writeHead(200,{'content-type':'text/html'});
+      res.end(fs.readFileSync('../client/get_todo.html')); 
+    }else if(parsed_url.pathname ==='/client/script.js'){
+      res.writeHead(200,{'content-type':'text/javascript'});
+      res.end(fs.readFileSync('../client/script.js')); 
+    } 
 
 
 if(req.method === "POST" && parsed_url.pathname === "/submit"){
@@ -72,6 +78,16 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     });
   }
 
+  if(req.method === "GET" && parsed_url.pathname === "/getData"){
+    let data = await collection.find().toArray();
+    console.log("data :",data);
+
+    let json_data = JSON.stringify(data);
+    console.log("json_data :",json_data);
+
+    res.writeHead(200,{"Content-Type" : "text/json"});
+    res.end(json_data);
+  }
 
 
 

@@ -49,3 +49,15 @@
     min-height: 50px;
     
 }
+.view_btn{
+    margin-top: 8px;
+    padding: 10px;
+}
+.view_btn a{
+    text-decoration: none;
+    color: red;
+}
+.view_btn:hover{
+    background-color: rgba(8, 129, 8, 0.274);
+    color: black;
+}
