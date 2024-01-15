@@ -141,6 +141,7 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
       res.writeHead(200,{"Content-Type" : "text/json"});
       res.end(json_data);
     }
+    
     if(req.method === "PUT" && parsed_url.pathname === "/editData"){
       let body ="";
       req.on('data',(chunks)=>{

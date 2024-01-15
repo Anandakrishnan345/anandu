@@ -11,7 +11,7 @@ async function getuserData() {
      for(let i=0;i<parsedUserData.length;i++){
         content=content +`
             <tr>
-            <td>${parsedUserData[i]._id}</td>
+           
             <td><input type="text" name="task" id="task-${parsedUserData[i]._id}" value='${parsedUserData[i].task}' disabled="true"></td> 
           
             <td><button onclick="handleEdit('${parsedUserData[i]._id}')">Edit</button></td>
@@ -23,3 +23,54 @@ async function getuserData() {
      tbody.innerHTML=content;
 }
 getuserData();
+
+function handleEdit(id){
+    let _id = id;
+    console.log("id :",_id)
+
+    let task = document.getElementById(`task-${_id}`);
+    console.log("task :",task);
+    task.disabled=false;
+
+    
+}
+async function handleSave(id){
+    console.log("id :",id);
+    let task = document.getElementById(`task-${id}`).value;
+    console.log("task :",task);
+
+    let data = {
+        id,
+        task,
+        
+    }
+    let json_data = JSON.stringify(data);
+
+    await fetch('http://localhost:3000/editData',{
+        "method" : "PUT",
+        "headers" : {
+            "Content-Type" : "text/json"
+        },
+        "body":json_data,
+    });
+getuserData()
+}
+async function handleDelete(id){
+    console.log("id :",id);
+    let response = await fetch("http://localhost:3000/deleteData",{
+        "method" : "DELETE",
+        "headers":{
+            "Content-Type" : "text/plain",
+        },
+        "body":id,
+    });
+    console.log("response :",response);
+    let parsed_response = await response.text();
+    console.log("parsed_response :",parsed_response);
+
+    if(parsed_response === "success"){
+        alert("Deletion successful");
+    }else{
+         alert("deletion failed");
+    }
+}

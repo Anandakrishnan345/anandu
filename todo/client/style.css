@@ -29,6 +29,8 @@
     /* border: 2px solid orange; */
     /* justify-content: center; */
     width: 400px;
+    display: flex;
+    gap: 2px;
     
     
 }
@@ -58,6 +60,24 @@
     color: red;
 }
 .view_btn:hover{
-    background-color: rgba(8, 129, 8, 0.274);
+    background-color: rgba(104, 150, 236, 0.877);
     color: black;
+}
+
+
+
+/* get_todo */
+.main_ctn{
+    margin: auto;
+}
+
+.tbody input{
+    color: red;
+    padding: auto;
+    width:500px
+}
+table,th,td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    
 }

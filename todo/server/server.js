@@ -3,7 +3,7 @@ const url = require('url');
 const port = 3000;
 const fs = require('fs');
 const queryString = require('querystring');
-const { MongoClient } = require('mongodb');
+const { MongoClient,ObjectId } = require('mongodb');
 
 const client = new MongoClient("mongodb://127.0.0.1:27017");
 
@@ -88,6 +88,66 @@ if(req.method === "POST" && parsed_url.pathname === "/submit"){
     res.writeHead(200,{"Content-Type" : "text/json"});
     res.end(json_data);
   }
+
+  if(req.method === "PUT" && parsed_url.pathname === "/editData"){
+    let body ="";
+    req.on('data',(chunks)=>{
+      console.log("chunks :",chunks);
+      body = body + chunks.toString();
+      console.log("body ;",body);
+      
+    });
+    req.on('end',async ()=>{
+      console.log("body :",body);
+      let data=JSON.parse(body);
+      let id=data.id;
+      console.log("id :",id);
+      console.log("typeof(id) :",typeof(id));
+      let _id=new ObjectId(id);
+      console.log("_id :",_id);
+      console.log("typeof(_id) :",typeof(_id));
+      let updateDatas ={
+        task :data.task,
+      }
+      await collection.updateOne({_id},{$set : updateDatas})
+      .then((message)=>{
+        console.log("Document updated...:",message);
+        res.writeHead(200,{"Content-Type" : "text/plain"});
+        res.end("updated successfully");
+      })
+      .catch((error)=>{
+        console.log("Document not updated :",error);
+        res.writeHead(400,{"Content-Type" : "text/plain"});
+        res.end("updation failed");
+      })
+    })
+  }
+
+  if(req.method === "DELETE" && parsed_url.pathname === "/deleteData"){
+    console.log("Reached delete route");
+
+    let body ="";
+    req.on('data',(chunks)=>{
+      console.log("Chunks",chunks);
+      body = body + chunks.toString();
+      console.log("body :",body);
+
+    });
+    req.on('end',async ()=>{
+      let _id= new ObjectId(body);
+      await collection.deleteOne({_id})
+      .then((message) =>{
+        console.log("Deletion Successful");
+        res.writeHead(200,{"Content-Type" : "text/plain"});
+        res.end("success");
+      })
+      .catch((error) =>{
+        console.log("deletion failed");
+        res.writeHead(200,{"Content-Type" : "text/plain"});
+        res.end("failed")
+      })
+    })
+   }
 
 
 
